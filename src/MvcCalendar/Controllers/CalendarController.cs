@@ -8,5 +8,9 @@ namespace MvcCalendar.Controllers
 {
     public class CalendarController : Controller
     {
+        public string Month()
+        {
+            return "This is the calendar itself";
+        }
     }
 }

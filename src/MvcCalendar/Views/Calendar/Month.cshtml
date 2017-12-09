@@ -1,5 +1,10 @@
 ﻿@{
     Layout = null;
+
+    var monthText = DateTime.Today.ToString("MMMM");
+    var monthInt = DateTime.Today.Month;
+    var year = DateTime.Today.Year;
+    var daysInMonth = DateTime.DaysInMonth(year, monthInt);
 }
 
 <!DOCTYPE html>
@@ -11,7 +16,12 @@
 </head>
 <body>
     <div>
-        <h1>Hello from our view!</h1>
+        <h1>@monthText  | @year</h1>
+        
+        @for (int i = 1; i <= daysInMonth; i++)
+        {
+            <div>@i</div>
+        }
     </div>
 </body>
 </html>

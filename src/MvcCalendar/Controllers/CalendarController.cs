@@ -13,7 +13,7 @@ namespace MvcCalendar.Controllers
 
         public ActionResult Month()
         {
-            return Content("This is going to be the month calendar view " + DateTime.Today.ToString("MMMM"));
+            return View();
         }
     }
 }

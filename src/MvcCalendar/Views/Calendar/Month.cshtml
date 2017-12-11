@@ -1,4 +1,4 @@
-﻿@{
+﻿@{ 
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.title = DateTime.Today.ToString("MMMM");
 
@@ -10,9 +10,19 @@
     var year = now.Year;
     var daysInMonth = DateTime.DaysInMonth(year, monthInt);
     int rowCount = daysInMonth / 7;
-    int nextMonth = now.Month + 1;
-    int prevMonth = now.Month - 1;
 }
+
+<script type="text/javascript">
+
+    $.ajax({
+        type: "GET",
+        url: '@Url.Action("TestJSON", "Calendar")',
+        success: function(xhr) {
+            console.log(xhr);
+        }
+    });
+
+</script>
 
 <div class="cal-navigation">
     <ul>

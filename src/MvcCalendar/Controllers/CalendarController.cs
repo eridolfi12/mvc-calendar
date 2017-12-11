@@ -4,15 +4,16 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MvcCalendar.Models;
 
 namespace MvcCalendar.Controllers
 {
     public class CalendarController : Controller
     {
-        DateTime dt1 = new DateTime();
-
         public ActionResult Month()
         {
+            var course = new Courses();
+
             return View();
         }
     }

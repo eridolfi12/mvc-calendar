@@ -15,7 +15,7 @@ namespace MvcCalendar.Controllers
         {
             var course = new Courses();
 
-            return View();
+            return View(course);
         }
 
         public ActionResult TestJSON()

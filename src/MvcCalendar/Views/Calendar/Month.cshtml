@@ -1,15 +1,8 @@
 ﻿@{ 
+    @model MvcCalendar.Models.Courses
+
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.title = DateTime.Today.ToString("MMMM");
-
-    DateTime now = DateTime.Today;
-    var firstDayOfMonth = new DateTime(now.Year, now.Month, 1);
-    int dayOfWeekInt = (int)firstDayOfMonth.DayOfWeek;
-    var monthText = now.ToString("MMMM");
-    var monthInt = now.Month;
-    var year = now.Year;
-    var daysInMonth = DateTime.DaysInMonth(year, monthInt);
-    int rowCount = daysInMonth / 7;
 }
 
 <script type="text/javascript">
@@ -32,7 +25,7 @@
 </div>
 
 <table id="calendar">
-    <caption>@monthText  @year</caption>
+    <caption>@Model.MonthText  @Model.Year</caption>
     <tr class="weekdays">
         <th scope="col">Sunday</th>
         <th scope="col">Monday</th>
@@ -43,19 +36,19 @@
         <th scope="col">Saturday</th>
     </tr>
 
-    @for (int r = 0; r <= rowCount; r++)
+    @for (int r = 0; r <= Model.RowCount; r++)
     {
-        if (r == rowCount)
+        if (r == Model.RowCount)
         {
             <tr class="days">
-                @for (int j = 0; j < dayOfWeekInt; j++)
+                @for (int j = 0; j < Model.DayOfWeekInt; j++)
                 {
                     <td class="day other-month">
                         <!--<div class="date"></div>-->
                     </td>
                 }
 
-                @for (int i = 1; i <= daysInMonth; i++)
+                @for (int i = 1; i <= Model.DaysInMonth; i++)
                 {
                     <td class="day">
                         <div class="date">@i</div>

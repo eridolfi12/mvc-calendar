@@ -21,4 +21,5 @@ namespace MvcCalendar.Models
         public int DaysInMonth => DateTime.DaysInMonth(Year, MonthInt);
         public int RowCount => DaysInMonth / 7;
     }
+
 }

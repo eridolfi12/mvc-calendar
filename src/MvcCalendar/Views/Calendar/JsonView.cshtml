@@ -1,0 +1,16 @@
+﻿@{
+    @model MvcCalendar.Models.CalData
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+
+<div>
+    @foreach (var item in Model.Items)
+    {
+        Console.WriteLine(item.CourseFields.startdateasnumber);
+    }
+</div>
+

@@ -32,9 +32,16 @@ namespace MvcCalendar.Controllers
             }
             catch (Exception e)
             {
-                text = "error";
+                text = "error: " + e;
             }
             return Json(new { json = text });
+        }
+
+        public ActionResult JsonView()
+        {
+            var calData = new CalData();
+
+            return View(calData);
         }
     }
 }
